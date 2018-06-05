@@ -11,6 +11,7 @@ import foot from '@/components/foot.vue'
 
 export default {
 
+  transition: 'bounce',
   components: {
     banner,
     foot

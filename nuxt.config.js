@@ -25,7 +25,9 @@ module.exports = {
    */
   css: [
     /*'@/assets/main.css',*/
-    { lang: 'scss', src: '@/assets/scss/app.scss' }
+    { src: '@/assets/scss/main.sass', lang: 'sass' },
+    //{ src: 'bulma/bulma.sass', lang: 'sass' },
+    { src: '@/assets/scss/app.scss',lang: 'scss' }
 
   ],
 
