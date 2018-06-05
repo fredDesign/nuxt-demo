@@ -20,19 +20,35 @@ module.exports = {
   /*
   ** Build configuration
   */
+  /*
+   ** Global CSS
+   */
+  css: [
+    /*'@/assets/main.css',*/
+    { lang: 'scss', src: '@/assets/scss/app.scss' }
+
+  ],
+
+  /*
+   ** Nuxt.js modules
+   */
+
+  modules: [
+    '@nuxtjs/axios'
+  ],
+  /*
+   ** Axios module configuration
+   */
+  axios: {
+    baseURL: 'http://localhost: 3000',
+    browserBaseURL: '/api'
+  },
+  /*
+   ** Build configuration
+   */
   build: {
-    /*
-    ** Run ESLint on save
-    */
-    extend (config, { isDev, isClient }) {
-      if (isDev && isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
-      }
-    }
+    postcss: [
+      require('postcss-cssnext')()
+    ]
   }
 }
