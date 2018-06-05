@@ -1,16 +1,27 @@
 <template>
+<div class="app-container">
+    <banner/>
   <section class="container">
     <div>
       <img :src="breed" alt="">
       <h4>{{name.toUpperCase()}}</h4>
     </div>
   </section>
+    <foot/>
+    </div>
 </template>
 
 <script>
 import axios from 'axios'
+import banner from '@/components/banner.vue'
+import foot from '@/components/foot.vue'
 
 export default {
+
+  components: {
+    banner,
+    foot
+  },
   async asyncData ({params}) {
     const { data } = await axios.get(`https://dog.ceo/api/breed/${params.breed}/images/random`)
     return { breed: data.message, name: params.breed }
