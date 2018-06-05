@@ -1,3 +1,14 @@
+
+# idea
+
+.idea/encodings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/nuxt-demo.iml
+.idea/workspace.xml
+.name
+vcs.xml
+
 # dependencies
 node_modules
 
