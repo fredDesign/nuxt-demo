@@ -1,3 +1,5 @@
+const axios = require('axios')
+
 module.exports = {
   /*
   ** Headers of the page
@@ -48,7 +50,7 @@ module.exports = {
    ** Axios module configuration
    */
   axios: {
-    baseURL: 'http://localhost: 3000',
+    baseURL: 'http://localhost: 3030',
     browserBaseURL: '/api'
   },
   /*
@@ -58,5 +60,16 @@ module.exports = {
     postcss: [
       require('postcss-cssnext')()
     ]
+  }
+  ,
+  generate: {
+    routes: function () {
+      return axios.get('https://jsonplaceholder.typicode.com/users')
+          .then((res) => {
+          return res.data.map((user) => {
+            return '/users/' + user.id
+          })
+    })
+    }
   }
 }
